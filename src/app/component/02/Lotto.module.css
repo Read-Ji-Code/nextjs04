@@ -1,0 +1,37 @@
+"use client"
+.lottobox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+.lottonum1, .lottonum2, .lottonum3, .lottonum4, .lottonum5{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    border : 1px solid gray ;
+    border-radius: 50%;
+  }
+  .lottonum1 {
+    background-color: #F2CB61;
+    color :white;
+  }
+  .lottonum2 {
+    background-color: #86E57F;
+    color :white;
+  }
+  .lottonum3 {
+    background-color: #6B66FF;
+    color :white;
+  }
+  .lottonum4 {
+    background-color: #F361DC;
+    color :white;
+  }
+  .lottonum5 {
+    background-color: #FFB2D9;
+    color :white;
+  }

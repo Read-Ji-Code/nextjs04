@@ -1,50 +1,33 @@
 "use client"
 import style from './Lotto.module.css';
+ 
+const LottoNums = ({ ns }) => {
+    let n ;
+    let nsTag = ns.map((item, idx) => {
+        n = Math.floor(item / 10); 
+        return (
+            idx === (ns.length - 1)  
+            ? <div key='nsplus' className={style.plus}> + </div>
+            : <div key={'ns' + idx} className={style[`lottonum${n + 1}`]}>
+                {item}
+              </div>
+        )
+    });
 
-const LottoNums = ({ns}) => {
-    console.log("LottoNums : ",ns);
-    
-    // const nsTag = ns.map((item, idx) => { 
-    //     let temp;
-    //     // if (item < 10) temp = <div className={style.lottonum1}>{item}</div>;
-    //     // else if (item < 20) temp =<div className={style.lottonum2}>{item}</div>;
-    //     // else if (item < 30) temp =<div className={style.lottonum3}>{item}</div>;
-    //     // else if (item < 40) temp =<div className={style.lottonum4}>{item}</div>;
-    //     // else temp =<div className={style.lottonum5}>{item}</div>;
-    //     // return temp;
-        
-    //     //switch case
-    //     // switch (n) {
-    //     //     case 0 : temp = <div className={style.lottonum1}>{item}</div>;
-    //     //         break; 
-    //     //     case 1 : temp = <div className={style.lottonum2}>{item}</div>;
-    //     //         break; 
-    //     //     case 2 : temp = <div className={style.lottonum3}>{item}</div>;
-    //     //         break; 
-    //     //     case 3 : temp = <div className={style.lottonum4}>{item}</div>;
-    //     //         break; 
-    //     //     case 4 : temp = <div className={style.lottonum5}>{item}</div>;
-    //     //         break;     
-    //     // }
-    //     // console.log(n);
-    //     // return temp;
+    //배열 at(-1)으로 마지막 요소 가져오기 
+    n = Math.floor(ns.at(-1) / 10); 
+    nsTag.push(
+        <div key={'ns' + (ns.length - 1)} className={style[`lottonum${n + 1}`]}>
+                {ns.at(-1)}
+        </div>
+    );
 
-    // }
-    // )
 
-    // const nsTag = ns.map((item, idx) => { 
-    //     let temp;
-        
-
-    //     return temp;
-    // });    
-  
-    // const nsTag = ns.map((item, idx) => temp);    
-  
     return (
         <div className={style.lottobox}>
-        {/* {nsTag} */}
+            {nsTag}
         </div>
     )
 }
+
 export default LottoNums;

@@ -27,7 +27,7 @@ const ClockTime = () => {
     return (
         <>
             <p>
-                NextJs LHello React !!
+                NextJs Hello React !!
             </p>
             <div>현재시간 : {dt}</div>
         </>
